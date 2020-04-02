@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/python@3.8.0
+      - image: circleci/python:3.8.0
     
     working_directory: -/repo
 
@@ -30,8 +30,8 @@ jobs:
         name: run tests
         command: |
           . venv/bin/activate
-          cd pollsapi
-          python manage.py test
+            cd pollsapi
+            python manage.py test
       - store_artifacts:
         path: test-reports
         destination: test-reports
